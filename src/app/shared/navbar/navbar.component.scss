@@ -4,7 +4,7 @@
     background: transparent;
 
     .navbar-logo{
-        height:9vh;
+        height:5vh;
     }
 
     .navbar-item{
@@ -15,4 +15,21 @@
 
 .mat-divider{
     margin: 0 1em 0 1em;
+}
+
+.logo-2 h3 {
+    color: #e74c3c;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height:1;
+    margin-top: 1em;
+}
+.logo-2 p {
+    font-size: 10px;
+    padding-left: 0px;
+    color: #34495e;
+    font-weight: 600;  
+    text-transform: uppercase;
 }
