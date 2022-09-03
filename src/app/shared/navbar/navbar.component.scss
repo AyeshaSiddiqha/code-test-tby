@@ -1,3 +1,18 @@
-// .container {
-//     display:flex;
-// }
+
+.navbar{
+    justify-content: space-between;
+    background: transparent;
+
+    .navbar-logo{
+        height:9vh;
+    }
+
+    .navbar-item{
+        position: relative;
+        font-size: 1.5em;
+    }
+}
+
+.mat-divider{
+    margin: 0 1em 0 1em;
+}
