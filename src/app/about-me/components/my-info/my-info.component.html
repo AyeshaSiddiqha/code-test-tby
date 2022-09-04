@@ -1,1 +1,53 @@
-<p>my-info works!</p>
+<mat-card class="display-card">
+    <div [formGroup]="infoForm"> 
+    <mat-card-header class="mb-4">
+        <div mat-card-avatar class="display-card-header-image"></div>
+
+        <div class="display-card-item">
+            <h4><small>Place</small>
+                    <mat-form-field class="display-card-item-input" appearance="none">  
+                        <input formControlName="place" matInput readonly [value]="infoForm['place']">  
+                    </mat-form-field> 
+                </h4>
+        </div>
+        <div class="display-card-item">
+            <h4><small>Gender</small>
+                <mat-form-field class="display-card-item-input" appearance="none">  
+                    <input formControlName="gender" matInput readonly [value]="infoForm['gender']">  
+                </mat-form-field> 
+            </h4>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-subtitle>
+            <mat-form-field>  
+                <input formControlName="name" matInput readonly [value]="infoForm['name']">  
+            </mat-form-field> 
+        </mat-card-subtitle>
+        <mat-card-title class="display-card-job">
+            <mat-form-field appearance="none">  
+                <input formControlName="job" matInput readonly [value]="infoForm['job']">  
+            </mat-form-field> 
+        </mat-card-title><br>
+        <h3 class="mb-1 display-card-subheading">About Me</h3>
+        <p>
+            <mat-form-field appearance="none" class="display-card-textarea">  
+                <textarea class="textarea" rows="2" 
+                formControlName="description" matInput readonly 
+                [value]="infoForm['description']">
+                </textarea> 
+            </mat-form-field> 
+        </p>
+        <h3 class="mb-1 display-card-subheading">Hobbies</h3>
+        
+        <div formArrayName="hobbies">
+        <div *ngFor="let hobby of hobbies.controls; let i=index">
+            <mat-form-field appearance="none" class="display-card-textarea">  
+                <input [formGroupName]="i" matInput readonly [value]="hobby.value">
+            </mat-form-field> 
+        </div>
+        </div>
+        
+    </mat-card-content>
+</div> 
+</mat-card>

@@ -1,0 +1,51 @@
+mat-card{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.display-card-header-image {
+    background-image: url('../../../../assets/images/profile1.jpg');
+    background-size: cover;
+}
+
+.display-card{
+    .display-card-item{
+        margin: auto auto;
+        h4{
+            font-size: 1.5rem;
+            line-height: 1.3;
+            font-weight: 500;
+            margin-bottom: 0;
+            small{
+                font-size: 0.7em;
+                opacity: 0.5;
+                display: block;
+                font-weight: 500;
+            }
+        }
+
+        .display-card-item-input{
+            width: 5em;
+            margin-top: -0.5em
+        }
+    }
+
+    .display-card-job{
+        margin: -2em 0 -2em 0
+    }
+    .display-card-textarea{
+        margin: -2em 2em -2em 0;
+        width: 30vw;
+    }
+    .display-card-subheading{
+        color: red
+    }
+}
+
+.textarea{
+        resize: none;
+}
