@@ -11,14 +11,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MyInfoComponent implements OnInit {
 
+  infoForm: FormGroup;
   myInfo: Info = {} as Info;
   private serverResponse = new BehaviorSubject(false);
-  infoForm: FormGroup; 
 
   constructor(
     private myInfoRepository: MyinfoRepositoryService,
     private fb: FormBuilder
-    ) { 
+    ) {
       this.createForm();
      }
 
@@ -26,13 +26,13 @@ export class MyInfoComponent implements OnInit {
     this.getInformation();
     this.serverResponse.subscribe(data => {
       if(data)
-      this.initializeForm();
-    })
+      {this.initializeForm();}
+    });
   }
 
-  initializeForm() : void {
+  initializeForm(): void {
 
-    let {name,gender,place,job,hobbies,description} = this.myInfo ;
+    const {name,gender,place,job,hobbies,description} = this.myInfo ;
 
     this.infoForm.patchValue({
       name,
@@ -43,7 +43,7 @@ export class MyInfoComponent implements OnInit {
     });
 
     if (hobbies) {
-      for (let hobby of hobbies) {
+      for (const hobby of hobbies) {
         this.addHobby(hobby);
       }
     }
@@ -62,7 +62,7 @@ export class MyInfoComponent implements OnInit {
     );
   }
 
-  createForm() : void {
+  createForm(): void {
     this.infoForm = this.fb.group({
       name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')] ],
       place: ['', Validators.required ],
@@ -73,8 +73,8 @@ export class MyInfoComponent implements OnInit {
     });
   }
 
-  get hobbies() : FormArray {
-    return this.infoForm.controls["hobbies"] as FormArray;
+  get hobbies(): FormArray {
+    return this.infoForm.controls.hobbies as FormArray;
   }
 
   addHobby(data = ''): void {
