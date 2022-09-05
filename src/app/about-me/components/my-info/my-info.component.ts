@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-my-info',
   templateUrl: './my-info.component.html',
-  styleUrls: ['./my-info.component.scss']
+  styleUrls: ['./my-info.component.scss', '../../../shared/shared.scss']
 })
 export class MyInfoComponent implements OnInit {
 

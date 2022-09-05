@@ -1,3 +1,4 @@
+<section class="background">
 <mat-card class="display-card">
     <div [formGroup]="infoForm"> 
     <mat-card-header class="mb-4">
@@ -6,14 +7,14 @@
         <div class="display-card-item">
             <h4><small>Place</small>
                     <mat-form-field class="display-card-item-input" appearance="none">  
-                        <input formControlName="place" matInput readonly [value]="infoForm['place']">  
+                        <input formControlName="place" matInput readonly>  
                     </mat-form-field> 
                 </h4>
         </div>
         <div class="display-card-item">
             <h4><small>Gender</small>
                 <mat-form-field class="display-card-item-input" appearance="none">  
-                    <input formControlName="gender" matInput readonly [value]="infoForm['gender']">  
+                    <input formControlName="gender" matInput readonly>  
                 </mat-form-field> 
             </h4>
         </div>
@@ -21,33 +22,31 @@
     <mat-card-content>
         <mat-card-subtitle>
             <mat-form-field>  
-                <input formControlName="name" matInput readonly [value]="infoForm['name']">  
+                <input formControlName="name" matInput readonly>  
             </mat-form-field> 
         </mat-card-subtitle>
         <mat-card-title class="display-card-job">
             <mat-form-field appearance="none">  
-                <input formControlName="job" matInput readonly [value]="infoForm['job']">  
+                <input formControlName="job" matInput readonly>  
             </mat-form-field> 
         </mat-card-title><br>
         <h3 class="mb-1 display-card-subheading">About Me</h3>
         <p>
             <mat-form-field appearance="none" class="display-card-textarea">  
                 <textarea class="textarea" rows="2" 
-                formControlName="description" matInput readonly 
-                [value]="infoForm['description']">
+                formControlName="description" matInput readonly>
                 </textarea> 
             </mat-form-field> 
         </p>
         <h3 class="mb-1 display-card-subheading">Hobbies</h3>
         
-        <div formArrayName="hobbies">
-        <div *ngFor="let hobby of hobbies.controls; let i=index">
+        <div formArrayName="hobbies" *ngFor="let hobby of hobbies.controls; let i=index">
             <mat-form-field appearance="none" class="display-card-textarea">  
-                <input [formGroupName]="i" matInput readonly [value]="hobby.value">
-            </mat-form-field> 
-        </div>
+                <input [formGroupName]="i" matInput [value]="hobby.value">
+            </mat-form-field>
         </div>
         
     </mat-card-content>
 </div> 
 </mat-card>
+</section>
