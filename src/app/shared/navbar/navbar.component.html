@@ -1,6 +1,6 @@
 <mat-toolbar class="navbar">
     <span>
-        <div class="logo-holder logo-2">
+        <div class="logo-holder logo">
             <span>
               <h3>Code Test</h3>
               <p>TerryBerry</p>
@@ -9,14 +9,16 @@
     </span>
     <span></span>
     <span>
-        <a mat-button [routerLink]="['/']" routerLinkActive="active">
-            <mat-icon >home</mat-icon>
-            <span class="navbar-item">Home</span>
+        <a mat-button [routerLink]="['/']" class="navbar-item"
+            [routerLinkActive]="['navbar-active']" [routerLinkActiveOptions]="{exact:true}">
+                <mat-icon >home</mat-icon>
+                <span class="navbar-item-text">Home</span>
         </a>
 
-        <a mat-button [routerLink]="['/aboutme/myinfo']" routerLinkActive="active">
-            <mat-icon >info</mat-icon>
-            <span class="navbar-item">About</span>
+        <a mat-button [routerLink]="['/aboutme/myinfo']" class="navbar-item"
+            [routerLinkActive]="['navbar-active']" [routerLinkActiveOptions]="{exact:true}">
+                <mat-icon >info</mat-icon>
+                <span class="navbar-item-text">About</span>
         </a>
     </span>   
 </mat-toolbar>

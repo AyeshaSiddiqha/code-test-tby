@@ -3,33 +3,37 @@
     justify-content: space-between;
     background: transparent;
 
-    .navbar-logo{
-        height:5vh;
+    .logo h3 {
+        color: #e74c3c;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 300;
+        font-size: 1em;
+        text-transform: uppercase;
+        line-height:1;
+        margin-top: 1em;
+    }
+    .logo p {
+        font-size: 10px;
+        padding-left: 0px;
+        color: #34495e;
+        font-weight: 600;  
+        text-transform: uppercase;
     }
 
     .navbar-item{
+        margin-right: 1em;
+    }
+
+    .navbar-item-text{
         position: relative;
         font-size: 1.5em;
+    }
+
+    .navbar-active{
+        background-color: rgba(240, 248, 255, 0.493);
     }
 }
 
 .mat-divider{
     margin: 0 1em 0 1em;
-}
-
-.logo-2 h3 {
-    color: #e74c3c;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-    font-size: 1em;
-    text-transform: uppercase;
-    line-height:1;
-    margin-top: 1em;
-}
-.logo-2 p {
-    font-size: 10px;
-    padding-left: 0px;
-    color: #34495e;
-    font-weight: 600;  
-    text-transform: uppercase;
 }

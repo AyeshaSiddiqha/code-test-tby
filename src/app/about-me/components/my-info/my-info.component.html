@@ -42,7 +42,7 @@
         
         <div formArrayName="hobbies" *ngFor="let hobby of hobbies.controls; let i=index">
             <mat-form-field appearance="none" class="display-card-textarea">  
-                <input [formGroupName]="i" matInput [value]="hobby.value">
+                <input [formControlName]="i" matInput readonly>
             </mat-form-field>
         </div>
         
