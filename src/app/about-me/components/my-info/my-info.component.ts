@@ -3,6 +3,7 @@ import { Info } from '../../../shared/model/info/info.model';
 import { MyinfoRepositoryService } from '../../../services/repositories/myinfo-repository.service';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
+import { SpinnerService } from 'src/app/services/spinner/spinner.service';
 
 @Component({
   selector: 'app-my-info',
@@ -17,7 +18,8 @@ export class MyInfoComponent implements OnInit {
 
   constructor(
     private myInfoRepository: MyinfoRepositoryService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private spinnerService: SpinnerService
     ) {
       this.createForm();
      }
@@ -50,14 +52,16 @@ export class MyInfoComponent implements OnInit {
   }
 
   getInformation(): void {
-
+    this.spinnerService.setSpinnerStatus(true);
     this.myInfoRepository.getInformation().subscribe(
       (data: Info) => {
         this.myInfo = data;
         this.serverResponse.next(true);
+        this.spinnerService.setSpinnerStatus(false);
       },
       (error) => {
         console.log(error);
+        this.spinnerService.setSpinnerStatus(false);
       }
     );
   }
@@ -82,4 +86,5 @@ export class MyInfoComponent implements OnInit {
       this.fb.control(data, [Validators.required, Validators.pattern('[a-zA-Z ]*'),])
     );
   }
+
 }
